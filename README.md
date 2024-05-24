@@ -43,6 +43,59 @@ templates](https://github.com/search?q=owner%3ALGUG2Z+nixos&type=repositories),
 you would add this to the `overlays` list in the `nixpkgsWithOverlays` function
 in `flake.nix`.
 
+## Extending
+
+Is there a plugin or an LSP that you don't see enabled here, but you would like
+to enable when you install `pkgs.jeezyvim`? No problem!
+
+```nix
+{pkgs, ...}: {
+  home.packages = [
+    (pkgs.jeezyvim.nixvimExtend {
+      # you can put anything under the "Options" section of the NixVim docs here
+      # https://nix-community.github.io/nixvim/
+
+      # some examples...
+
+      # all your regular vim options here
+      options = {
+        textwidth = 120;
+      };
+
+      # add your own personal keymaps preferences
+      keymaps = [
+        {
+          mode = "n";
+          action = ":vsplit<CR>";
+          key = "|";
+        }
+
+        {
+          mode = "n";
+          action = ":split<CR>";
+          key = "-";
+        }
+      ];
+
+
+      plugins = {
+        lsp.servers = {
+          # full list of language servers you can enable on the left bar here:
+          # https://nix-community.github.io/nixvim/plugins/lsp/servers/ansiblels/index.html
+
+          graphql.enable = true;
+        };
+
+        # full list of plugins on the left bar here:
+        # https://nix-community.github.io/nixvim/plugins/airline/index.html
+
+        markdown-preview.enable = true;
+      };
+    })
+  ]
+}
+```
+
 ## Forking
 
 You can also just fork this repo and use it as a starting point for your own
