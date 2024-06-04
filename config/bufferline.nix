@@ -1,7 +1,7 @@
-{
+{pkgs, ...}: {
   plugins.bufferline = {
-    enable = true;
-    alwaysShowBufferline = false;
+    enable = pkgs.lib.mkDefault true;
+    alwaysShowBufferline = pkgs.lib.mkDefault false;
     offsets = [
       {
         filetype = "NvimTree";

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   plugins.specs = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     # nvim 0.10-related bugfix: https://github.com/edluffy/specs.nvim/issues/31
     package = pkgs.vimUtils.buildVimPlugin {
       name = "specs.nvim";

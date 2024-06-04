@@ -1,31 +1,31 @@
-{
+{pkgs, ...}: {
   plugins.lsp = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     servers = {
-      bashls.enable = true;
-      dockerls.enable = true;
-      gopls.enable = true;
-      jsonls.enable = true;
-      marksman.enable = true;
-      nil_ls.enable = true;
-      pyright.enable = true;
-      tsserver.enable = true;
-      lua-ls.enable = true;
+      bashls.enable = pkgs.lib.mkDefault true;
+      dockerls.enable = pkgs.lib.mkDefault true;
+      gopls.enable = pkgs.lib.mkDefault true;
+      jsonls.enable = pkgs.lib.mkDefault true;
+      marksman.enable = pkgs.lib.mkDefault true;
+      nil_ls.enable = pkgs.lib.mkDefault true;
+      pyright.enable = pkgs.lib.mkDefault true;
+      tsserver.enable = pkgs.lib.mkDefault true;
+      lua-ls.enable = pkgs.lib.mkDefault true;
       rust-analyzer = {
-        enable = true;
-        installCargo = false;
-        installRustc = false;
+        enable = pkgs.lib.mkDefault true;
+        installCargo = pkgs.lib.mkDefault false;
+        installRustc = pkgs.lib.mkDefault false;
       };
-      tailwindcss.enable = true;
-      typst-lsp.enable = true;
-      cssls.enable = true;
-      html.enable = true;
-      htmx.enable = true;
-      solargraph.enable = true;
-      yamlls.enable = true;
-      taplo.enable = true;
+      tailwindcss.enable = pkgs.lib.mkDefault true;
+      typst-lsp.enable = pkgs.lib.mkDefault true;
+      cssls.enable = pkgs.lib.mkDefault true;
+      html.enable = pkgs.lib.mkDefault true;
+      htmx.enable = pkgs.lib.mkDefault true;
+      solargraph.enable = pkgs.lib.mkDefault true;
+      yamlls.enable = pkgs.lib.mkDefault true;
+      taplo.enable = pkgs.lib.mkDefault true;
     };
   };
 
-  plugins.lsp-format.enable = true;
+  plugins.lsp-format.enable = pkgs.lib.mkDefault true;
 }

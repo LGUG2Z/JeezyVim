@@ -1,38 +1,38 @@
-{
+{pkgs, ...}: {
   plugins.none-ls = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     sources = {
       code_actions = {
-        statix.enable = true;
+        statix.enable = pkgs.lib.mkDefault true;
       };
 
       diagnostics = {
-        stylelint.enable = true;
-        statix.enable = true;
-        sqlfluff.enable = true;
-        rubocop.enable = true;
-        pylint.enable = true;
-        mypy.enable = true;
-        markdownlint.enable = true;
-        hadolint.enable = true;
-        fish.enable = true;
-        dotenv_linter.enable = true;
-        djlint.enable = true;
-        deadnix.enable = true;
-        trail_space.enable = true;
+        stylelint.enable = pkgs.lib.mkDefault true;
+        statix.enable = pkgs.lib.mkDefault true;
+        sqlfluff.enable = pkgs.lib.mkDefault true;
+        rubocop.enable = pkgs.lib.mkDefault true;
+        pylint.enable = pkgs.lib.mkDefault true;
+        mypy.enable = pkgs.lib.mkDefault true;
+        markdownlint.enable = pkgs.lib.mkDefault true;
+        hadolint.enable = pkgs.lib.mkDefault true;
+        fish.enable = pkgs.lib.mkDefault true;
+        dotenv_linter.enable = pkgs.lib.mkDefault true;
+        djlint.enable = pkgs.lib.mkDefault true;
+        deadnix.enable = pkgs.lib.mkDefault true;
+        trail_space.enable = pkgs.lib.mkDefault true;
       };
 
       formatting = {
-        stylua.enable = true;
-        alejandra.enable = true;
-        shfmt.enable = true;
-        gofmt.enable = true;
-        rubyfmt.enable = true;
-        black.enable = true;
-        isort.enable = true;
-        prettier.enable = true;
-        prettier.disableTsServerFormatter = true;
-        typstfmt.enable = true;
+        stylua.enable = pkgs.lib.mkDefault true;
+        alejandra.enable = pkgs.lib.mkDefault true;
+        shfmt.enable = pkgs.lib.mkDefault true;
+        gofmt.enable = pkgs.lib.mkDefault true;
+        rubyfmt.enable = pkgs.lib.mkDefault true;
+        black.enable = pkgs.lib.mkDefault true;
+        isort.enable = pkgs.lib.mkDefault true;
+        prettier.enable = pkgs.lib.mkDefault true;
+        prettier.disableTsServerFormatter = pkgs.lib.mkDefault true;
+        typstfmt.enable = pkgs.lib.mkDefault true;
       };
     };
   };

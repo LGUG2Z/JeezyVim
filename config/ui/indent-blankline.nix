@@ -1,6 +1,6 @@
-{
+{pkgs, ...}: {
   plugins.indent-blankline = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     settings = {
       indent.char = "│";
       whitespace.remove_blankline_trail = true;

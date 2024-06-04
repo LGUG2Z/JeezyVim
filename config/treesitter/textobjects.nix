@@ -1,9 +1,9 @@
-{
+{pkgs, ...}: {
   plugins.treesitter-textobjects = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     select = {
-      enable = true;
-      lookahead = true;
+      enable = pkgs.lib.mkDefault true;
+      lookahead = pkgs.lib.mkDefault true;
       keymaps = {
         "af" = {query = "@function.outer";};
         "if" = {query = "@function.inner";};
@@ -16,7 +16,7 @@
       };
     };
     swap = {
-      enable = true;
+      enable = pkgs.lib.mkDefault true;
       swapNext = {
         "<leader>pn" = {
           query = "@parameter.inner";
@@ -31,8 +31,8 @@
       };
     };
     move = {
-      enable = true;
-      setJumps = true;
+      enable = pkgs.lib.mkDefault true;
+      setJumps = pkgs.lib.mkDefault true;
       gotoNextStart = {
         "]f" = {query = "@function.outer";};
         "]c" = {query = "@conditional.outer";};

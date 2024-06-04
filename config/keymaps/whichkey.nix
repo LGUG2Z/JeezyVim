@@ -1,6 +1,6 @@
-{
+{pkgs, ...}: {
   plugins.which-key = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     layout = {align = "center";};
     triggersNoWait = ["`" "'" "<leader>" "g`" "g'" "\"" "<c-r>" "z="];
     window = {

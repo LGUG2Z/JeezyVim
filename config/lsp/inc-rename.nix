@@ -1,3 +1,3 @@
-{
-  plugins.inc-rename.enable = true;
+{pkgs, ...}: {
+  plugins.inc-rename.enable = pkgs.lib.mkDefault true;
 }

@@ -62,37 +62,39 @@ to enable when you install `pkgs.jeezyvim`? No problem!
         textwidth = 120;
       };
 
+      config = {
       # add your own personal keymaps preferences
-      keymaps = [
-        {
-          mode = "n";
-          action = ":vsplit<CR>";
-          key = "|";
-        }
+        keymaps = [
+          {
+            mode = "n";
+            action = ":vsplit<CR>";
+            key = "|";
+          }
 
-        {
-          mode = "n";
-          action = ":split<CR>";
-          key = "-";
-        }
-      ];
+          {
+            mode = "n";
+            action = ":split<CR>";
+            key = "-";
+          }
+        ];
 
 
-      plugins = {
-        lsp.servers = {
-          # full list of language servers you can enable on the left bar here:
-          # https://nix-community.github.io/nixvim/plugins/lsp/servers/ansiblels/index.html
+        plugins = {
+          lsp.servers = {
+            # full list of language servers you can enable on the left bar here:
+            # https://nix-community.github.io/nixvim/plugins/lsp/servers/ansiblels/index.html
 
-          graphql.enable = true;
+            graphql.enable = true;
+          };
+
+          # full list of plugins on the left bar here:
+          # https://nix-community.github.io/nixvim/plugins/airline/index.html
+
+          markdown-preview.enable = true;
         };
-
-        # full list of plugins on the left bar here:
-        # https://nix-community.github.io/nixvim/plugins/airline/index.html
-
-        markdown-preview.enable = true;
       };
     })
-  ]
+  ];
 }
 ```
 

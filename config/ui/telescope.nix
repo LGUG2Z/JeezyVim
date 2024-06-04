@@ -1,6 +1,6 @@
-{
+{pkgs, ...}: {
   plugins.telescope = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     settings = {
       defaults = {
         path_display = ["truncate"];
@@ -52,19 +52,19 @@
     };
     extensions = {
       fzf-native = {
-        enable = true;
+        enable = pkgs.lib.mkDefault true;
         settings.caseMode = "smart_case";
       };
       frecency = {
-        enable = true;
+        enable = pkgs.lib.mkDefault true;
         settings = {
-          showUnindexed = true;
+          showUnindexed = pkgs.lib.mkDefault true;
           defaultWorkspace = "CWD";
         };
       };
       undo = {
-        enable = true;
-        settings.useDelta = true;
+        enable = pkgs.lib.mkDefault true;
+        settings.useDelta = pkgs.lib.mkDefault true;
       };
     };
     keymaps = {

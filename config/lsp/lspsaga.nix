@@ -1,19 +1,19 @@
-{
+{pkgs, ...}: {
   plugins.lspsaga = {
-    enable = true;
+    enable = pkgs.lib.mkDefault true;
     ui.border = "rounded";
     ui.codeAction = "";
-    beacon.enable = true;
+    beacon.enable = pkgs.lib.mkDefault true;
     implement = {
-      enable = true;
-      sign = false;
+      enable = pkgs.lib.mkDefault true;
+      sign = pkgs.lib.mkDefault false;
     };
     lightbulb = {
-      enable = true;
-      sign = true;
-      virtualText = false;
+      enable = pkgs.lib.mkDefault true;
+      sign = pkgs.lib.mkDefault true;
+      virtualText = pkgs.lib.mkDefault false;
     };
     outline = {layout = "float";};
-    symbolInWinbar.enable = true;
+    symbolInWinbar.enable = pkgs.lib.mkDefault true;
   };
 }
