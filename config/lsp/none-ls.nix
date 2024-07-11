@@ -17,7 +17,6 @@
         hadolint.enable = pkgs.lib.mkDefault true;
         fish.enable = pkgs.lib.mkDefault true;
         dotenv_linter.enable = pkgs.lib.mkDefault true;
-        djlint.enable = pkgs.lib.mkDefault true;
         deadnix.enable = pkgs.lib.mkDefault true;
         trail_space.enable = pkgs.lib.mkDefault true;
       };
