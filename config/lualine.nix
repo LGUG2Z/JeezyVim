@@ -2,7 +2,7 @@
   plugins.lualine = {
     enable = pkgs.lib.mkDefault true;
     globalstatus = pkgs.lib.mkDefault true;
-    theme = "kanagawa";
+    theme = pkgs.lib.mkDefault "kanagawa";
     disabledFiletypes.statusline = [
       "alpha"
     ];
