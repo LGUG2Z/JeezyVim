@@ -24,6 +24,7 @@
     sleuth.enable = pkgs.lib.mkDefault true;
     nvim-tree = {
       enable = pkgs.lib.mkDefault true;
+      updateFocusedFile.enable = pkgs.lib.mkDefault true;
     };
     toggleterm = {
       enable = pkgs.lib.mkDefault true;
