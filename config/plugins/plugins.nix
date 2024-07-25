@@ -43,11 +43,6 @@
       highlight = pkgs.lib.mkDefault true;
       lsp.autoAttach = pkgs.lib.mkDefault true;
     };
-    better-escape = {
-      enable = pkgs.lib.mkDefault true;
-      keys = "<Esc>";
-      mapping = ["jk"];
-    };
     nvim-colorizer.enable = pkgs.lib.mkDefault true;
     marks.enable = pkgs.lib.mkDefault true;
     vim-matchup = {
