@@ -2,7 +2,7 @@
   plugins = {
     luasnip = {
       enable = pkgs.lib.mkDefault true;
-      extraConfig = {
+      settings = {
         enable_autosnippets = pkgs.lib.mkDefault true;
       };
     };

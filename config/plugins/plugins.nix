@@ -10,14 +10,16 @@
     lastplace.enable = pkgs.lib.mkDefault true;
     todo-comments = {
       enable = pkgs.lib.mkDefault true;
-      mergeKeywords = pkgs.lib.mkDefault true;
-      highlight = {
-        before = "";
-        after = "fg";
-        keyword = "wide";
-      };
-      keywords = {
-        QUESTION = {icon = "";};
+      settings = {
+        mergeKeywords = pkgs.lib.mkDefault true;
+        highlight = {
+          before = "";
+          after = "fg";
+          keyword = "wide";
+        };
+        keywords = {
+          QUESTION = {icon = "";};
+        };
       };
     };
     comment.enable = pkgs.lib.mkDefault true;

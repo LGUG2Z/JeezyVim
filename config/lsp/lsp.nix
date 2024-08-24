@@ -17,7 +17,7 @@
         installRustc = pkgs.lib.mkDefault false;
       };
       tailwindcss.enable = pkgs.lib.mkDefault true;
-      typst-lsp.enable = pkgs.lib.mkDefault true;
+      # typst-lsp.enable = pkgs.lib.mkDefault true; # broken
       cssls.enable = pkgs.lib.mkDefault true;
       html.enable = pkgs.lib.mkDefault true;
       htmx.enable = pkgs.lib.mkDefault true;
