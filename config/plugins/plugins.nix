@@ -42,8 +42,10 @@
     };
     navic = {
       enable = pkgs.lib.mkDefault true;
-      highlight = pkgs.lib.mkDefault true;
-      lsp.autoAttach = pkgs.lib.mkDefault true;
+      settings = {
+        highlight = pkgs.lib.mkDefault true;
+        lsp.autoAttach = pkgs.lib.mkDefault true;
+      };
     };
     nvim-colorizer.enable = pkgs.lib.mkDefault true;
     marks.enable = pkgs.lib.mkDefault true;
