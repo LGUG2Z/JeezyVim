@@ -55,5 +55,6 @@
       enableTransmute = pkgs.lib.mkDefault true;
       treesitterIntegration.enable = pkgs.lib.mkDefault true;
     };
+    web-devicons.enable = true;
   };
 }
