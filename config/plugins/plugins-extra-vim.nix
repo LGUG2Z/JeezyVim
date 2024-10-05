@@ -18,9 +18,5 @@
       plugin = treesj;
       config = "lua require('treesj').setup({use_default_keymaps=false})";
     }
-    {
-      plugin = highlight-undo-nvim;
-      config = "lua require('highlight-undo').setup()";
-    }
   ];
 }
