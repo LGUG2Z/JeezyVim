@@ -6,7 +6,7 @@
     };
     crates-nvim.enable = pkgs.lib.mkDefault true;
     bacon.enable = pkgs.lib.mkDefault true;
-    rust-tools.enable = pkgs.lib.mkDefault true;
+    rustaceanvim.enable = pkgs.lib.mkDefault true;
     lastplace.enable = pkgs.lib.mkDefault true;
     todo-comments = {
       enable = pkgs.lib.mkDefault true;

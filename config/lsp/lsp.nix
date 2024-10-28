@@ -11,11 +11,6 @@
       pyright.enable = pkgs.lib.mkDefault true;
       ts_ls.enable = pkgs.lib.mkDefault true;
       lua_ls.enable = pkgs.lib.mkDefault true;
-      rust_analyzer = {
-        enable = pkgs.lib.mkDefault true;
-        installCargo = pkgs.lib.mkDefault false;
-        installRustc = pkgs.lib.mkDefault false;
-      };
       tailwindcss.enable = pkgs.lib.mkDefault true;
       typst_lsp.enable = pkgs.lib.mkDefault true;
       cssls.enable = pkgs.lib.mkDefault true;
