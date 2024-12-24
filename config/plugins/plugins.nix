@@ -4,7 +4,7 @@
       enable = pkgs.lib.mkDefault true;
       settings.checkTs = pkgs.lib.mkDefault true;
     };
-    crates-nvim.enable = pkgs.lib.mkDefault true;
+    crates.enable = pkgs.lib.mkDefault true;
     bacon.enable = pkgs.lib.mkDefault true;
     rustaceanvim.enable = pkgs.lib.mkDefault true;
     lastplace.enable = pkgs.lib.mkDefault true;
@@ -47,13 +47,17 @@
         lsp.autoAttach = pkgs.lib.mkDefault true;
       };
     };
-    nvim-colorizer.enable = pkgs.lib.mkDefault true;
+    colorizer.enable = pkgs.lib.mkDefault true;
     marks.enable = pkgs.lib.mkDefault true;
     vim-matchup = {
       enable = pkgs.lib.mkDefault true;
-      enableSurround = pkgs.lib.mkDefault true;
-      enableTransmute = pkgs.lib.mkDefault true;
-      treesitterIntegration.enable = pkgs.lib.mkDefault true;
+      settings = pkgs.lib.mkDefault {
+        surround_enabled = pkgs.lib.mkDefault 1;
+        transmute_enabled = pkgs.lib.mkDefault 1;
+      };
+      treesitter = pkgs.lib.mkDefault {
+        enable = pkgs.lib.mkDefault true;
+      };
     };
     web-devicons.enable = true;
   };
