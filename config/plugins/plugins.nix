@@ -28,6 +28,7 @@
       enable = pkgs.lib.mkDefault true;
       updateFocusedFile.enable = pkgs.lib.mkDefault true;
     };
+    nvim-ufo.enable = pkgs.lib.mkDefault true;
     toggleterm = {
       enable = pkgs.lib.mkDefault true;
       settings = {
