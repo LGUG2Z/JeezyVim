@@ -18,7 +18,9 @@
           keyword = "wide";
         };
         keywords = {
-          QUESTION = {icon = "";};
+          QUESTION = {
+            icon = "";
+          };
         };
       };
     };
@@ -35,13 +37,17 @@
       enable = pkgs.lib.mkDefault true;
       settings = {
         direction = "float";
-        floatOpts = {border = "single";};
+        floatOpts = {
+          border = "single";
+        };
         terminalMappings = pkgs.lib.mkDefault true;
       };
     };
     illuminate = {
       enable = pkgs.lib.mkDefault true;
-      underCursor = pkgs.lib.mkDefault true;
+      settings = {
+        under_cursor = pkgs.lib.mkDefault true;
+      };
     };
     navic = {
       enable = pkgs.lib.mkDefault true;
@@ -63,5 +69,14 @@
       };
     };
     web-devicons.enable = true;
+    typst-preview = {
+      enable = true;
+      settings = {
+        dependencies_bin = {
+          tinymist = "${pkgs.tinymist}/bin/tinymist";
+          websocat = "${pkgs.websocat}/bin/websocat";
+        };
+      };
+    };
   };
 }
