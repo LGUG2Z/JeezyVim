@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.treesitter-textobjects = {
     enable = pkgs.lib.mkDefault true;
     settings = {

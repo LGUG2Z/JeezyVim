@@ -1,7 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   extraConfigLuaPost = builtins.readFile ./extra.lua;
 
-  extraPackages = with pkgs;
+  extraPackages =
+    with pkgs;
     [
       # runtime dependencies
       fd

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.lualine = {
     enable = pkgs.lib.mkDefault true;
     settings = {

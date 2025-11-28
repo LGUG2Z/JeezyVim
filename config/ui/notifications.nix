@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.notify = {
     enable = pkgs.lib.mkDefault true;
     settings = {

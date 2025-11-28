@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins = {
     nvim-autopairs = {
       enable = pkgs.lib.mkDefault true;

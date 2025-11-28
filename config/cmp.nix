@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins = {
     luasnip = {
       enable = pkgs.lib.mkDefault true;
@@ -14,12 +15,12 @@
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
 
         sources = [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "path";}
-          {name = "buffer";}
-          {name = "git";}
-          {name = "calc";}
+          { name = "nvim_lsp"; }
+          { name = "luasnip"; }
+          { name = "path"; }
+          { name = "buffer"; }
+          { name = "git"; }
+          { name = "calc"; }
         ];
 
         mapping = {

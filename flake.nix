@@ -5,23 +5,27 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs = {
-    nixvim,
-    nixpkgs,
-    flake-parts,
-    ...
-  } @ inputs: let
-    mkPkgs = system:
-      import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
+  outputs =
+    {
+      nixvim,
+      nixpkgs,
+      flake-parts,
+      ...
+    }@inputs:
+    let
+      mkPkgs =
+        system:
+        import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
         };
-      };
-  in
-    flake-parts.lib.mkFlake {inherit inputs;} {
+    in
+    flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -31,35 +35,49 @@
 
       imports = [
         inputs.flake-parts.flakeModules.easyOverlay
+        inputs.treefmt-nix.flakeModule
       ];
 
-      perSystem = {
-        system,
-        config,
-        ...
-      }: let
-        nixvimLib = nixvim.lib.${system};
-        nixvim' = nixvim.legacyPackages.${system};
-        nixvimModule = {
-          pkgs = mkPkgs system;
-          module = import ./config;
-          extraSpecialArgs = {
+      perSystem =
+        {
+          system,
+          config,
+          ...
+        }:
+        let
+          nixvimLib = nixvim.lib.${system};
+          nixvim' = nixvim.legacyPackages.${system};
+          nixvimModule = {
+            pkgs = mkPkgs system;
+            module = import ./config;
+            extraSpecialArgs = {
+            };
+          };
+          jeezyvim = nixvim'.makeNixvimWithModule nixvimModule;
+        in
+        {
+          treefmt = {
+            projectRootFile = "flake.nix";
+            programs = {
+              nixfmt.enable = true;
+              shellcheck.enable = true;
+              stylua.enable = true;
+              deadnix.enable = true;
+            };
+          };
+
+          checks = {
+            default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          };
+
+          packages = {
+            inherit jeezyvim;
+            default = jeezyvim;
+          };
+
+          overlayAttrs = {
+            inherit (config.packages) jeezyvim;
           };
         };
-        jeezyvim = nixvim'.makeNixvimWithModule nixvimModule;
-      in {
-        checks = {
-          default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
-        };
-
-        packages = {
-          inherit jeezyvim;
-          default = jeezyvim;
-        };
-
-        overlayAttrs = {
-          inherit (config.packages) jeezyvim;
-        };
-      };
     };
 }

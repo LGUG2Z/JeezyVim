@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.lsp = {
     enable = pkgs.lib.mkDefault true;
     servers = {
@@ -7,7 +8,7 @@
       gopls.enable = pkgs.lib.mkDefault true;
       jsonls.enable = pkgs.lib.mkDefault true;
       marksman.enable = pkgs.lib.mkDefault true;
-      nil_ls.enable = pkgs.lib.mkDefault true;
+      nixd.enable = pkgs.lib.mkDefault true;
       pyright.enable = pkgs.lib.mkDefault true;
       ts_ls.enable = pkgs.lib.mkDefault true;
       lua_ls.enable = pkgs.lib.mkDefault true;

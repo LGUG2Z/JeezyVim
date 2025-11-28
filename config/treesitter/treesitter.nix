@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.treesitter = {
     enable = pkgs.lib.mkDefault true;
   };

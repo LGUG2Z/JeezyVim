@@ -1,7 +1,7 @@
 {
   autoCmd = [
     {
-      event = ["BufWinEnter"];
+      event = [ "BufWinEnter" ];
       callback = {
         __raw = ''
           function()
@@ -11,7 +11,7 @@
       };
     }
     {
-      event = ["FileType"];
+      event = [ "FileType" ];
       pattern = [
         "markdown"
       ];
@@ -24,7 +24,7 @@
       };
     }
     {
-      event = ["FileType"];
+      event = [ "FileType" ];
       pattern = [
         "netrw"
         "Jaq"
@@ -50,7 +50,7 @@
       };
     }
     {
-      event = ["CmdWinEnter"];
+      event = [ "CmdWinEnter" ];
       callback = {
         __raw = ''
           function()
@@ -60,7 +60,7 @@
       };
     }
     {
-      event = ["VimResized"];
+      event = [ "VimResized" ];
       callback = {
         __raw = ''
           function()

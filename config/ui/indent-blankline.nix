@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.indent-blankline = {
     enable = pkgs.lib.mkDefault true;
     settings = {

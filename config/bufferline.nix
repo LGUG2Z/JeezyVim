@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.bufferline = {
     enable = pkgs.lib.mkDefault true;
     settings.options = {

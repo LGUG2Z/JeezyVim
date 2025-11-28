@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   plugins.none-ls = {
     enable = pkgs.lib.mkDefault true;
     sources = {
@@ -22,6 +23,10 @@
       };
 
       formatting = {
+        nixfmt = {
+          enable = true;
+          package = pkgs.nixfmt-rfc-style;
+        };
         stylua.enable = pkgs.lib.mkDefault true;
         alejandra.enable = pkgs.lib.mkDefault true;
         shfmt.enable = pkgs.lib.mkDefault true;
